@@ -1,4 +1,9 @@
 ﻿using System;
+using System.Linq;
+
+// INPUT = abcd
+
+// DESIRED OUPUT = A - Bb - Ccc- Dddd
 
 namespace FirstLetterLoopProject
 {
@@ -6,7 +11,10 @@ namespace FirstLetterLoopProject
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var letters = "abcd";
+            var output = string.Join("-", letters.Select((c, i) => Char.ToUpper(c) + new string(Char.ToLower(c),i)));
+            Console.WriteLine(output);
+            Console.ReadLine();
         }
     }
 }
